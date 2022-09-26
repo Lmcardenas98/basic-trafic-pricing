@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Card from './components/Card';
+import {useState} from 'react'
+import circle from './images/pattern-circles.svg'
 
 function App() {
+
+  const [discount, setDiscount] = useState(0)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='header'>
+        <h2>Simple, traffic-based pricing</h2>
+        <p>Sing-up for our 30-day trail. No credit card required</p>
+        <img src={circle} alt='' />
+      </div>
+      <Card values={{
+        discount:discount,
+        setDiscount: setDiscount
+      }}/>
     </div>
   );
 }
